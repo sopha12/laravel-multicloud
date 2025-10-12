@@ -127,56 +127,6 @@ Each provider has its own configuration section:
 ],
 ```
 
-### IBM Cloud Configuration
-
-```php
-'ibm' => [
-    'api_key' => env('IBM_API_KEY'),
-    'service_instance_id' => env('IBM_SERVICE_INSTANCE_ID'),
-    'endpoint' => env('IBM_ENDPOINT'),
-    'bucket' => env('IBM_BUCKET'),
-    'region' => env('IBM_REGION'),
-    'options' => [
-        'storage_class' => env('IBM_STORAGE_CLASS', 'standard'),
-        'cache_control' => env('IBM_CACHE_CONTROL', 'max-age=31536000'),
-    ],
-],
-```
-
-### DigitalOcean Configuration
-
-```php
-'digitalocean' => [
-    'access_key' => env('DO_SPACES_ACCESS_KEY'),
-    'secret_key' => env('DO_SPACES_SECRET_KEY'),
-    'region' => env('DO_SPACES_REGION', 'nyc3'),
-    'bucket' => env('DO_SPACES_BUCKET'),
-    'endpoint' => env('DO_SPACES_ENDPOINT'),
-    'options' => [
-        'acl' => env('DO_SPACES_ACL', 'private'),
-        'cache_control' => env('DO_CACHE_CONTROL', 'max-age=31536000'),
-    ],
-],
-```
-
-### Oracle Cloud Configuration
-
-```php
-'oracle' => [
-    'user_ocid' => env('ORACLE_USER_OCID'),
-    'tenancy_ocid' => env('ORACLE_TENANCY_OCID'),
-    'fingerprint' => env('ORACLE_FINGERPRINT'),
-    'private_key' => env('ORACLE_PRIVATE_KEY'),
-    'region' => env('ORACLE_REGION', 'us-ashburn-1'),
-    'bucket' => env('ORACLE_BUCKET'),
-    'namespace' => env('ORACLE_NAMESPACE'),
-    'options' => [
-        'storage_tier' => env('ORACLE_STORAGE_TIER', 'standard'),
-        'cache_control' => env('ORACLE_CACHE_CONTROL', 'max-age=31536000'),
-    ],
-],
-```
-
 ### Cloudflare Configuration
 
 ```php

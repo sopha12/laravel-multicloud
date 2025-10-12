@@ -41,7 +41,7 @@ $url = LaravelMulticloud::generateSignedUrl('images/photo.jpg', 3600);
 
 ## 🌟 Key Features
 
-- **9 Cloud Providers**: AWS, Azure, GCP, Cloudinary, Alibaba, IBM, DigitalOcean, Oracle, Cloudflare
+- **6 Cloud Providers**: AWS, Azure, GCP, Cloudinary, Alibaba, Cloudflare
 - **Unified API**: Single interface for all cloud operations
 - **Type Safety**: Full PHP 8.0+ type declarations
 - **Laravel Integration**: Facade, Service Provider, Artisan Commands
@@ -71,9 +71,6 @@ $url = LaravelMulticloud::generateSignedUrl('images/photo.jpg', 3600);
 | **Google Cloud Platform** | ✅ | Bucket Operations, IAM |
 | **Cloudinary** | ✅ | Image/Video Transformations |
 | **Alibaba Cloud** | ✅ | OSS, CDN Integration |
-| **IBM Cloud** | ✅ | COS, Object Storage |
-| **DigitalOcean** | ✅ | Spaces, CDN |
-| **Oracle Cloud** | ✅ | OCI Object Storage |
 | **Cloudflare** | ✅ | R2, Custom Domains |
 
 ## 📊 Usage Statistics

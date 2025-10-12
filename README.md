@@ -1,16 +1,14 @@
 # 🚀 Laravel MultiCloud
 
 [![Latest Version](https://img.shields.io/packagist/v/subhashladumor/laravel-multicloud.svg?style=flat-square)](https://packagist.org/packages/subhashladumor/laravel-multicloud)
-[![Total Downloads](https://img.shields.io/packagist/dt/subhashladumor/laravel-multicloud.svg?style=flat-square)](https://packagist.org/packages/subhashladumor/laravel-multicloud)
-[![License](https://img.shields.io/packagist/l/subhashladumor/laravel-multicloud.svg?style=flat-square)](https://packagist.org/packages/subhashladumor/laravel-multicloud)
 [![PHP Version](https://img.shields.io/packagist/php-v/subhashladumor/laravel-multicloud.svg?style=flat-square)](https://packagist.org/packages/subhashladumor/laravel-multicloud)
-[![Laravel Version](https://img.shields.io/badge/Laravel-9.x%20%7C%2010.x%20%7C%2011.x-red.svg?style=flat-square)](https://laravel.com)
+[![Laravel Version](https://img.shields.io/badge/Laravel-12.x-red.svg?style=flat-square)](https://laravel.com)
 
-> **Unified Laravel package to manage and integrate multiple cloud providers (AWS, Azure, GCP, Cloudinary, Alibaba Cloud, IBM Cloud, DigitalOcean, Oracle Cloud, Cloudflare) using a single, consistent API layer.**
+> **Unified Laravel package to manage and integrate multiple cloud providers (AWS, Azure, GCP, Cloudinary, Alibaba Cloud, Cloudflare) using a single, consistent API layer.**
 
 ## 🌟 Features
 
-- **🔄 Multi-Provider Support**: Seamlessly work with 9 major cloud providers
+- **🔄 Multi-Provider Support**: Seamlessly work with 6 major cloud providers
 - **🎯 Unified API**: Single interface for all cloud operations
 - **⚡ Easy Integration**: Simple Laravel facade and service provider
 - **🛡️ Type Safety**: Full PHP 8.1+ type declarations
@@ -29,9 +27,6 @@
 | **Google Cloud Platform** | ✅ | Cloud Storage, Bucket Operations |
 | **Cloudinary** | ✅ | Image/Video Management, Transformations |
 | **Alibaba Cloud** | ✅ | Object Storage Service (OSS) |
-| **IBM Cloud** | ✅ | Object Storage, COS Integration |
-| **DigitalOcean** | ✅ | Spaces, CDN Integration |
-| **Oracle Cloud** | ✅ | Object Storage, OCI Integration |
 | **Cloudflare** | ✅ | R2 Storage, Custom Domains |
 
 ## 📦 Installation
@@ -82,27 +77,6 @@ ALIBABA_ACCESS_KEY_ID=your-access-key-id
 ALIBABA_ACCESS_KEY_SECRET=your-access-key-secret
 ALIBABA_OSS_ENDPOINT=your-endpoint
 ALIBABA_OSS_BUCKET=your-bucket-name
-
-# IBM Cloud Configuration
-IBM_API_KEY=your-api-key
-IBM_SERVICE_INSTANCE_ID=your-service-instance-id
-IBM_ENDPOINT=your-endpoint
-IBM_BUCKET=your-bucket-name
-
-# DigitalOcean Configuration
-DO_SPACES_ACCESS_KEY=your-access-key
-DO_SPACES_SECRET_KEY=your-secret-key
-DO_SPACES_REGION=nyc3
-DO_SPACES_BUCKET=your-bucket-name
-
-# Oracle Cloud Configuration
-ORACLE_USER_OCID=your-user-ocid
-ORACLE_TENANCY_OCID=your-tenancy-ocid
-ORACLE_FINGERPRINT=your-fingerprint
-ORACLE_PRIVATE_KEY=your-private-key
-ORACLE_REGION=us-ashburn-1
-ORACLE_BUCKET=your-bucket-name
-ORACLE_NAMESPACE=your-namespace
 
 # Cloudflare Configuration
 CLOUDFLARE_ACCOUNT_ID=your-account-id
@@ -454,10 +428,9 @@ This package is open-sourced software licensed under the [MIT license](LICENSE).
 
 ## 🆘 Support
 
-- **Documentation**: [Full Documentation](https://github.com/subhashladumor/laravel-multicloud/wiki)
+- **Documentation**: [Full Documentation](https://github.com/subhashladumor1/laravel-multicloud/blob/main/docs/README.md)
 - **Issues**: [GitHub Issues](https://github.com/subhashladumor/laravel-multicloud/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/subhashladumor/laravel-multicloud/discussions)
-- **Email**: subhashladumor@gmail.com
 
 ## 🙏 Acknowledgments
 
@@ -465,13 +438,6 @@ This package is open-sourced software licensed under the [MIT license](LICENSE).
 - All Cloud Provider SDKs
 - Open Source Community
 - Contributors and Testers
-
-## 📊 SEO Keywords
-
-**Primary Keywords**: laravel cloud, laravel multicloud, laravel aws, laravel azure, laravel gcp, laravel cloud manager, laravel s3, laravel cloudflare, laravel devops, laravel automation, laravel cloud sdk, laravel backup deploy, laravel cloud api, laravel cloud storage, laravel multi cloud integration, cloud management for laravel
-
-**Secondary Keywords**: php cloud storage, laravel file upload, laravel cloudinary, laravel digitalocean, laravel oracle cloud, laravel ibm cloud, laravel alibaba cloud, laravel cloud integration, laravel storage driver, laravel cloud provider, laravel cloud service, laravel cloud platform, laravel cloud solution, laravel cloud toolkit, laravel cloud utilities
-
 ---
 
 <div align="center">

@@ -11,9 +11,6 @@ use Subhashladumor\LaravelMulticloud\Providers\AzureProvider;
 use Subhashladumor\LaravelMulticloud\Providers\GcpProvider;
 use Subhashladumor\LaravelMulticloud\Providers\CloudinaryProvider;
 use Subhashladumor\LaravelMulticloud\Providers\AlibabaProvider;
-use Subhashladumor\LaravelMulticloud\Providers\IbmProvider;
-use Subhashladumor\LaravelMulticloud\Providers\DigitalOceanProvider;
-use Subhashladumor\LaravelMulticloud\Providers\OracleProvider;
 use Subhashladumor\LaravelMulticloud\Providers\CloudflareProvider;
 
 /**
@@ -103,48 +100,6 @@ class CloudManager extends Manager
     {
         $config = $this->config->get('multicloud.providers.alibaba', []);
         $provider = new AlibabaProvider();
-        $provider->connect($config);
-        
-        return $provider;
-    }
-
-    /**
-     * Create IBM provider instance
-     * 
-     * @return CloudProviderInterface
-     */
-    protected function createIbmDriver(): CloudProviderInterface
-    {
-        $config = $this->config->get('multicloud.providers.ibm', []);
-        $provider = new IbmProvider();
-        $provider->connect($config);
-        
-        return $provider;
-    }
-
-    /**
-     * Create DigitalOcean provider instance
-     * 
-     * @return CloudProviderInterface
-     */
-    protected function createDigitaloceanDriver(): CloudProviderInterface
-    {
-        $config = $this->config->get('multicloud.providers.digitalocean', []);
-        $provider = new DigitalOceanProvider();
-        $provider->connect($config);
-        
-        return $provider;
-    }
-
-    /**
-     * Create Oracle provider instance
-     * 
-     * @return CloudProviderInterface
-     */
-    protected function createOracleDriver(): CloudProviderInterface
-    {
-        $config = $this->config->get('multicloud.providers.oracle', []);
-        $provider = new OracleProvider();
         $provider->connect($config);
         
         return $provider;
@@ -279,9 +234,6 @@ class CloudManager extends Manager
             'gcp' => 'Google Cloud Platform',
             'cloudinary' => 'Cloudinary',
             'alibaba' => 'Alibaba Cloud',
-            'ibm' => 'IBM Cloud',
-            'digitalocean' => 'DigitalOcean',
-            'oracle' => 'Oracle Cloud',
             'cloudflare' => 'Cloudflare',
         ];
     }

@@ -13,9 +13,6 @@ use Subhashladumor\LaravelMulticloud\Providers\AzureProvider;
 use Subhashladumor\LaravelMulticloud\Providers\GcpProvider;
 use Subhashladumor\LaravelMulticloud\Providers\CloudinaryProvider;
 use Subhashladumor\LaravelMulticloud\Providers\AlibabaProvider;
-use Subhashladumor\LaravelMulticloud\Providers\IbmProvider;
-use Subhashladumor\LaravelMulticloud\Providers\DigitalOceanProvider;
-use Subhashladumor\LaravelMulticloud\Providers\OracleProvider;
 use Subhashladumor\LaravelMulticloud\Providers\CloudflareProvider;
 
 /**
@@ -128,18 +125,6 @@ class CloudTest extends TestCase
         // Test Alibaba driver
         $alibabaDriver = $manager->driver('alibaba');
         $this->assertInstanceOf(AlibabaProvider::class, $alibabaDriver);
-        
-        // Test IBM driver
-        $ibmDriver = $manager->driver('ibm');
-        $this->assertInstanceOf(IbmProvider::class, $ibmDriver);
-        
-        // Test DigitalOcean driver
-        $doDriver = $manager->driver('digitalocean');
-        $this->assertInstanceOf(DigitalOceanProvider::class, $doDriver);
-        
-        // Test Oracle driver
-        $oracleDriver = $manager->driver('oracle');
-        $this->assertInstanceOf(OracleProvider::class, $oracleDriver);
         
         // Test Cloudflare driver
         $cloudflareDriver = $manager->driver('cloudflare');
@@ -319,84 +304,6 @@ class CloudTest extends TestCase
         $this->assertEquals('alibaba', $uploadResult['provider']);
         
         $this->assertEquals('Alibaba Cloud', $provider->getProviderName());
-    }
-
-    /**
-     * Test IBM provider operations
-     * 
-     * @return void
-     */
-    public function testIbmProviderOperations(): void
-    {
-        $provider = new IbmProvider();
-        $config = [
-            'api_key' => 'test-key',
-            'service_instance_id' => 'test-instance',
-            'endpoint' => 'test-endpoint',
-            'bucket' => 'test-bucket',
-        ];
-        
-        $connected = $provider->connect($config);
-        $this->assertTrue($connected);
-        
-        $uploadResult = $provider->upload('test/file.txt', 'test content');
-        $this->assertEquals('success', $uploadResult['status']);
-        $this->assertEquals('ibm', $uploadResult['provider']);
-        
-        $this->assertEquals('IBM Cloud', $provider->getProviderName());
-    }
-
-    /**
-     * Test DigitalOcean provider operations
-     * 
-     * @return void
-     */
-    public function testDigitalOceanProviderOperations(): void
-    {
-        $provider = new DigitalOceanProvider();
-        $config = [
-            'access_key' => 'test-key',
-            'secret_key' => 'test-secret',
-            'region' => 'nyc3',
-            'bucket' => 'test-bucket',
-        ];
-        
-        $connected = $provider->connect($config);
-        $this->assertTrue($connected);
-        
-        $uploadResult = $provider->upload('test/file.txt', 'test content');
-        $this->assertEquals('success', $uploadResult['status']);
-        $this->assertEquals('digitalocean', $uploadResult['provider']);
-        
-        $this->assertEquals('DigitalOcean', $provider->getProviderName());
-    }
-
-    /**
-     * Test Oracle provider operations
-     * 
-     * @return void
-     */
-    public function testOracleProviderOperations(): void
-    {
-        $provider = new OracleProvider();
-        $config = [
-            'user_ocid' => 'test-user',
-            'tenancy_ocid' => 'test-tenancy',
-            'fingerprint' => 'test-fingerprint',
-            'private_key' => 'test-key',
-            'region' => 'us-ashburn-1',
-            'bucket' => 'test-bucket',
-            'namespace' => 'test-namespace',
-        ];
-        
-        $connected = $provider->connect($config);
-        $this->assertTrue($connected);
-        
-        $uploadResult = $provider->upload('test/file.txt', 'test content');
-        $this->assertEquals('success', $uploadResult['status']);
-        $this->assertEquals('oracle', $uploadResult['provider']);
-        
-        $this->assertEquals('Oracle Cloud Infrastructure', $provider->getProviderName());
     }
 
     /**
