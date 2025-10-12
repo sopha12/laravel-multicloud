@@ -11,9 +11,6 @@ Detailed guide for each supported cloud provider in Laravel MultiCloud.
 | **Google Cloud Platform** | ✅ | Bucket Operations, IAM | Pay-per-use |
 | **Cloudinary** | ✅ | Image/Video Transformations | Freemium |
 | **Alibaba Cloud** | ✅ | OSS, CDN Integration | Pay-per-use |
-| **IBM Cloud** | ✅ | COS, Object Storage | Pay-per-use |
-| **DigitalOcean** | ✅ | Spaces, CDN | Fixed pricing |
-| **Oracle Cloud** | ✅ | OCI Object Storage | Pay-per-use |
 | **Cloudflare** | ✅ | R2, Custom Domains | Pay-per-use |
 
 ## 🏗️ AWS S3
@@ -383,225 +380,6 @@ $signedUrl = $alibaba->generateSignedUrl('private/file.txt', 3600);
 4. **Use encryption** for sensitive data
 5. **Monitor usage** and costs
 
-## 🔵 IBM Cloud
-
-### Overview
-
-IBM Cloud Object Storage provides enterprise-grade object storage with high durability and global availability.
-
-### Features
-
-- **Enterprise Security**: Encryption, compliance
-- **Global Availability**: Multiple regions
-- **Flexible Pricing**: Pay-per-use model
-- **API Compatibility**: S3-compatible API
-- **Integration**: IBM Cloud services
-
-### Configuration
-
-```php
-'ibm' => [
-    'api_key' => env('IBM_API_KEY'),
-    'service_instance_id' => env('IBM_SERVICE_INSTANCE_ID'),
-    'endpoint' => env('IBM_ENDPOINT'),
-    'bucket' => env('IBM_BUCKET'),
-    'region' => env('IBM_REGION'),
-    'options' => [
-        'storage_class' => env('IBM_STORAGE_CLASS', 'standard'),
-        'cache_control' => env('IBM_CACHE_CONTROL', 'max-age=31536000'),
-    ],
-],
-```
-
-### Environment Variables
-
-```env
-IBM_API_KEY=your-api-key
-IBM_SERVICE_INSTANCE_ID=your-service-instance-id
-IBM_ENDPOINT=s3.us-south.cloud-object-storage.appdomain.cloud
-IBM_BUCKET=your-bucket-name
-IBM_REGION=us-south
-IBM_STORAGE_CLASS=standard
-```
-
-### Usage Examples
-
-```php
-$ibm = LaravelMulticloud::driver('ibm');
-
-// Upload with storage class
-$result = $ibm->upload('backups/data.zip', $content, [
-    'storage_class' => 'standard',
-    'cache_control' => 'max-age=31536000'
-]);
-
-// Upload with metadata
-$result = $ibm->upload('documents/file.pdf', $content, [
-    'metadata' => [
-        'content-type' => 'application/pdf',
-        'description' => 'Important document'
-    ]
-]);
-
-// Generate signed URL
-$signedUrl = $ibm->generateSignedUrl('private/file.txt', 3600);
-```
-
-### Best Practices
-
-1. **Use appropriate storage classes** for cost optimization
-2. **Enable encryption** for security
-3. **Monitor usage** and costs
-4. **Use lifecycle policies** for data management
-5. **Integrate with IBM Cloud services**
-
-## 🐳 DigitalOcean
-
-### Overview
-
-DigitalOcean Spaces provides simple, scalable object storage with a global CDN and S3-compatible API.
-
-### Features
-
-- **Simple Pricing**: Fixed monthly costs
-- **Global CDN**: Fast content delivery
-- **S3-Compatible**: Easy migration
-- **High Availability**: 99.99% uptime
-- **Developer-Friendly**: Simple API
-
-### Configuration
-
-```php
-'digitalocean' => [
-    'access_key' => env('DO_SPACES_ACCESS_KEY'),
-    'secret_key' => env('DO_SPACES_SECRET_KEY'),
-    'region' => env('DO_SPACES_REGION', 'nyc3'),
-    'bucket' => env('DO_SPACES_BUCKET'),
-    'endpoint' => env('DO_SPACES_ENDPOINT'),
-    'options' => [
-        'acl' => env('DO_SPACES_ACL', 'private'),
-        'cache_control' => env('DO_CACHE_CONTROL', 'max-age=31536000'),
-    ],
-],
-```
-
-### Environment Variables
-
-```env
-DO_SPACES_ACCESS_KEY=your-access-key
-DO_SPACES_SECRET_KEY=your-secret-key
-DO_SPACES_REGION=nyc3
-DO_SPACES_BUCKET=your-bucket-name
-DO_SPACES_ENDPOINT=https://nyc3.digitaloceanspaces.com
-DO_SPACES_ACL=private
-```
-
-### Usage Examples
-
-```php
-$digitalocean = LaravelMulticloud::driver('digitalocean');
-
-// Upload with ACL
-$result = $digitalocean->upload('images/photo.jpg', $content, [
-    'acl' => 'public-read',
-    'cache_control' => 'max-age=31536000'
-]);
-
-// Upload with metadata
-$result = $digitalocean->upload('documents/file.pdf', $content, [
-    'metadata' => [
-        'content-type' => 'application/pdf',
-        'description' => 'Document file'
-    ]
-]);
-
-// Generate signed URL
-$signedUrl = $digitalocean->generateSignedUrl('private/file.txt', 3600);
-```
-
-### Best Practices
-
-1. **Use CDN** for better performance
-2. **Choose appropriate regions** for latency
-3. **Monitor usage** for cost control
-4. **Use lifecycle policies** for data management
-5. **Enable versioning** for important data
-
-## 🏛️ Oracle Cloud
-
-### Overview
-
-Oracle Cloud Infrastructure Object Storage provides high-performance object storage with enterprise-grade security and compliance.
-
-### Features
-
-- **Enterprise Security**: Encryption, compliance
-- **High Performance**: Low latency, high throughput
-- **Global Availability**: Multiple regions
-- **Cost Optimization**: Flexible pricing
-- **Integration**: Oracle Cloud services
-
-### Configuration
-
-```php
-'oracle' => [
-    'user_ocid' => env('ORACLE_USER_OCID'),
-    'tenancy_ocid' => env('ORACLE_TENANCY_OCID'),
-    'fingerprint' => env('ORACLE_FINGERPRINT'),
-    'private_key' => env('ORACLE_PRIVATE_KEY'),
-    'region' => env('ORACLE_REGION', 'us-ashburn-1'),
-    'bucket' => env('ORACLE_BUCKET'),
-    'namespace' => env('ORACLE_NAMESPACE'),
-    'options' => [
-        'storage_tier' => env('ORACLE_STORAGE_TIER', 'standard'),
-        'cache_control' => env('ORACLE_CACHE_CONTROL', 'max-age=31536000'),
-    ],
-],
-```
-
-### Environment Variables
-
-```env
-ORACLE_USER_OCID=ocid1.user.oc1..your-user-ocid
-ORACLE_TENANCY_OCID=ocid1.tenancy.oc1..your-tenancy-ocid
-ORACLE_FINGERPRINT=your-fingerprint
-ORACLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n..."
-ORACLE_REGION=us-ashburn-1
-ORACLE_BUCKET=your-bucket-name
-ORACLE_NAMESPACE=your-namespace
-```
-
-### Usage Examples
-
-```php
-$oracle = LaravelMulticloud::driver('oracle');
-
-// Upload with storage tier
-$result = $oracle->upload('backups/data.zip', $content, [
-    'storage_tier' => 'standard',
-    'cache_control' => 'max-age=31536000'
-]);
-
-// Upload with metadata
-$result = $oracle->upload('documents/file.pdf', $content, [
-    'metadata' => [
-        'content-type' => 'application/pdf',
-        'description' => 'Important document'
-    ]
-]);
-
-// Generate signed URL
-$signedUrl = $oracle->generateSignedUrl('private/file.txt', 3600);
-```
-
-### Best Practices
-
-1. **Use appropriate storage tiers** for cost optimization
-2. **Enable encryption** for security
-3. **Monitor usage** and costs
-4. **Use lifecycle policies** for data management
-5. **Integrate with Oracle Cloud services**
-
 ## ☁️ Cloudflare
 
 ### Overview
@@ -676,15 +454,15 @@ $signedUrl = $cloudflare->generateSignedUrl('private/file.txt', 3600);
 
 ## 🔄 Provider Comparison
 
-| Feature | AWS | Azure | GCP | Cloudinary | Alibaba | IBM | DO | Oracle | Cloudflare |
-|---------|-----|-------|-----|------------|---------|-----|----|---------|-----------| 
-| **Pricing** | Pay-per-use | Pay-per-use | Pay-per-use | Freemium | Pay-per-use | Pay-per-use | Fixed | Pay-per-use | Pay-per-use |
-| **CDN** | CloudFront | Azure CDN | Cloud CDN | Built-in | Alibaba CDN | IBM CDN | Built-in | Oracle CDN | Built-in |
-| **Encryption** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Lifecycle** | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Versioning** | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ❌ |
-| **S3 Compatible** | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ | ✅ |
-| **Global Regions** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Feature | AWS | Azure | GCP | Cloudinary | Alibaba | Cloudflare |
+|---------|-----|-------|-----|------------|---------|-----------| 
+| **Pricing** | Pay-per-use | Pay-per-use | Pay-per-use | Freemium | Pay-per-use | Pay-per-use |
+| **CDN** | CloudFront | Azure CDN | Cloud CDN | Built-in | Alibaba CDN | Built-in |
+| **Encryption** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Lifecycle** | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ |
+| **Versioning** | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ |
+| **S3 Compatible** | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ |
+| **Global Regions** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## 🎯 Choosing the Right Provider
 
@@ -700,13 +478,12 @@ $signedUrl = $cloudflare->generateSignedUrl('private/file.txt', 3600);
 
 ### For Cost Optimization
 - **Cloudflare R2**: Zero egress fees
-- **DigitalOcean Spaces**: Fixed pricing
 - **Alibaba Cloud**: Competitive pricing
 
 ### For Enterprise
 - **AWS S3**: Most mature and feature-rich
 - **Azure Blob**: Best for Microsoft compliance
-- **Oracle Cloud**: Best for Oracle ecosystem
+- **GCP**: Best for Google ecosystem
 
 ## 📚 Next Steps
 

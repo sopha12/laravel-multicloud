@@ -29,15 +29,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Initial release of Laravel MultiCloud
-- Support for 9 cloud providers:
+- Support for 6 cloud providers:
   - Amazon Web Services (AWS S3)
   - Microsoft Azure Blob Storage
   - Google Cloud Platform Storage
   - Cloudinary
   - Alibaba Cloud Object Storage Service (OSS)
-  - IBM Cloud Object Storage
-  - DigitalOcean Spaces
-  - Oracle Cloud Infrastructure Object Storage
   - Cloudflare R2
 - Unified API for all cloud operations
 - Laravel Facade for easy access
@@ -356,9 +353,6 @@ This is the first stable release of Laravel MultiCloud, providing a unified inte
 - Google Cloud Platform Storage
 - Cloudinary
 - Alibaba Cloud Object Storage Service (OSS)
-- IBM Cloud Object Storage
-- DigitalOcean Spaces
-- Oracle Cloud Infrastructure Object Storage
 - Cloudflare R2
 
 #### Installation

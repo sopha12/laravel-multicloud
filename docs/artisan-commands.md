@@ -39,9 +39,6 @@ Specify the cloud provider to deploy to.
 - `gcp` - Google Cloud Platform
 - `cloudinary` - Cloudinary
 - `alibaba` - Alibaba Cloud
-- `ibm` - IBM Cloud
-- `digitalocean` - DigitalOcean
-- `oracle` - Oracle Cloud
 - `cloudflare` - Cloudflare
 
 **Example:**

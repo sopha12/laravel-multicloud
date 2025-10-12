@@ -60,27 +60,6 @@ ALIBABA_ACCESS_KEY_SECRET=your-access-key-secret
 ALIBABA_OSS_ENDPOINT=your-endpoint
 ALIBABA_OSS_BUCKET=your-bucket-name
 
-# IBM Cloud Configuration
-IBM_API_KEY=your-api-key
-IBM_SERVICE_INSTANCE_ID=your-service-instance-id
-IBM_ENDPOINT=your-endpoint
-IBM_BUCKET=your-bucket-name
-
-# DigitalOcean Configuration
-DO_SPACES_ACCESS_KEY=your-access-key
-DO_SPACES_SECRET_KEY=your-secret-key
-DO_SPACES_REGION=nyc3
-DO_SPACES_BUCKET=your-bucket-name
-
-# Oracle Cloud Configuration
-ORACLE_USER_OCID=your-user-ocid
-ORACLE_TENANCY_OCID=your-tenancy-ocid
-ORACLE_FINGERPRINT=your-fingerprint
-ORACLE_PRIVATE_KEY=your-private-key
-ORACLE_REGION=us-ashburn-1
-ORACLE_BUCKET=your-bucket-name
-ORACLE_NAMESPACE=your-namespace
-
 # Cloudflare Configuration
 CLOUDFLARE_ACCOUNT_ID=your-account-id
 CLOUDFLARE_ACCESS_KEY_ID=your-access-key-id

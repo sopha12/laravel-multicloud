@@ -20,7 +20,7 @@ return [
     |
     | This option controls the default cloud provider that will be used
     | when no specific provider is specified. Supported providers:
-    | aws, azure, gcp, cloudinary, alibaba, ibm, digitalocean, oracle, cloudflare
+    | aws, azure, gcp, cloudinary, alibaba, cloudflare
     |
     */
     'default' => env('MULTICLOUD_DEFAULT', 'aws'),
@@ -127,59 +127,6 @@ return [
 
         /*
         |--------------------------------------------------------------------------
-        | IBM Cloud Configuration
-        |--------------------------------------------------------------------------
-        */
-        'ibm' => [
-            'api_key' => env('IBM_API_KEY'),
-            'service_instance_id' => env('IBM_SERVICE_INSTANCE_ID'),
-            'endpoint' => env('IBM_ENDPOINT'),
-            'bucket' => env('IBM_BUCKET'),
-            'region' => env('IBM_REGION'),
-            'options' => [
-                'storage_class' => env('IBM_STORAGE_CLASS', 'standard'),
-                'cache_control' => env('IBM_CACHE_CONTROL', 'max-age=31536000'),
-            ],
-        ],
-
-        /*
-        |--------------------------------------------------------------------------
-        | DigitalOcean Configuration
-        |--------------------------------------------------------------------------
-        */
-        'digitalocean' => [
-            'access_key' => env('DO_SPACES_ACCESS_KEY'),
-            'secret_key' => env('DO_SPACES_SECRET_KEY'),
-            'region' => env('DO_SPACES_REGION', 'nyc3'),
-            'bucket' => env('DO_SPACES_BUCKET'),
-            'endpoint' => env('DO_SPACES_ENDPOINT'),
-            'options' => [
-                'acl' => env('DO_SPACES_ACL', 'private'),
-                'cache_control' => env('DO_CACHE_CONTROL', 'max-age=31536000'),
-            ],
-        ],
-
-        /*
-        |--------------------------------------------------------------------------
-        | Oracle Cloud Infrastructure Configuration
-        |--------------------------------------------------------------------------
-        */
-        'oracle' => [
-            'user_ocid' => env('ORACLE_USER_OCID'),
-            'tenancy_ocid' => env('ORACLE_TENANCY_OCID'),
-            'fingerprint' => env('ORACLE_FINGERPRINT'),
-            'private_key' => env('ORACLE_PRIVATE_KEY'),
-            'region' => env('ORACLE_REGION', 'us-ashburn-1'),
-            'bucket' => env('ORACLE_BUCKET'),
-            'namespace' => env('ORACLE_NAMESPACE'),
-            'options' => [
-                'storage_tier' => env('ORACLE_STORAGE_TIER', 'standard'),
-                'cache_control' => env('ORACLE_CACHE_CONTROL', 'max-age=31536000'),
-            ],
-        ],
-
-        /*
-        |--------------------------------------------------------------------------
         | Cloudflare Configuration
         |--------------------------------------------------------------------------
         */
@@ -281,9 +228,6 @@ return [
         'gcp' => env('MULTICLOUD_GCP_ENABLED', true),
         'cloudinary' => env('MULTICLOUD_CLOUDINARY_ENABLED', true),
         'alibaba' => env('MULTICLOUD_ALIBABA_ENABLED', true),
-        'ibm' => env('MULTICLOUD_IBM_ENABLED', true),
-        'digitalocean' => env('MULTICLOUD_DIGITALOCEAN_ENABLED', true),
-        'oracle' => env('MULTICLOUD_ORACLE_ENABLED', true),
         'cloudflare' => env('MULTICLOUD_CLOUDFLARE_ENABLED', true),
     ],
 
@@ -303,9 +247,6 @@ return [
             'gcp' => ['aws', 'azure'],
             'cloudinary' => ['aws', 'azure'],
             'alibaba' => ['aws', 'azure'],
-            'ibm' => ['aws', 'azure'],
-            'digitalocean' => ['aws', 'azure'],
-            'oracle' => ['aws', 'azure'],
             'cloudflare' => ['aws', 'azure'],
         ],
         'max_retries' => env('MULTICLOUD_MAX_RETRIES', 3),
