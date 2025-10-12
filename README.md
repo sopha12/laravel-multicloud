@@ -455,7 +455,6 @@ This package is open-sourced software licensed under the [MIT license](LICENSE).
 - **Documentation**: [Full Documentation](https://github.com/subhashladumor1/laravel-multicloud/blob/main/docs/README.md)
 - **Issues**: [GitHub Issues](https://github.com/subhashladumor/laravel-multicloud/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/subhashladumor/laravel-multicloud/discussions)
-- **Email**: subhashladumor@gmail.com
 
 ## 🙏 Acknowledgments
 
