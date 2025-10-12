@@ -1,10 +1,8 @@
 # 🚀 Laravel MultiCloud
 
 [![Latest Version](https://img.shields.io/packagist/v/subhashladumor/laravel-multicloud.svg?style=flat-square)](https://packagist.org/packages/subhashladumor/laravel-multicloud)
-[![Total Downloads](https://img.shields.io/packagist/dt/subhashladumor/laravel-multicloud.svg?style=flat-square)](https://packagist.org/packages/subhashladumor/laravel-multicloud)
-[![License](https://img.shields.io/packagist/l/subhashladumor/laravel-multicloud.svg?style=flat-square)](https://packagist.org/packages/subhashladumor/laravel-multicloud)
 [![PHP Version](https://img.shields.io/packagist/php-v/subhashladumor/laravel-multicloud.svg?style=flat-square)](https://packagist.org/packages/subhashladumor/laravel-multicloud)
-[![Laravel Version](https://img.shields.io/badge/Laravel-9.x%20%7C%2010.x%20%7C%2011.x-red.svg?style=flat-square)](https://laravel.com)
+[![Laravel Version](https://img.shields.io/badge/Laravel-12.x-red.svg?style=flat-square)](https://laravel.com)
 
 > **Unified Laravel package to manage and integrate multiple cloud providers (AWS, Azure, GCP, Cloudinary, Alibaba Cloud, IBM Cloud, DigitalOcean, Oracle Cloud, Cloudflare) using a single, consistent API layer.**
 
