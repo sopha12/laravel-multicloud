@@ -1,0 +1,80 @@
+{
+    "name": "subhashladumor/laravel-multicloud",
+    "description": "Laravel MultiCloud — manage AWS, Azure, GCP, Cloudinary, Alibaba, IBM, DigitalOcean, Oracle & Cloudflare in one Laravel package. Deploy, backup, scale, monitor, and optimize cloud apps with a single unified API.",
+    "type": "library",
+    "license": "MIT",
+    "version":"1.0.0",
+    "keywords": [
+        "laravel",
+        "cloud",
+        "multicloud",
+        "aws",
+        "azure",
+        "gcp",
+        "cloudinary",
+        "alibaba",
+        "ibm",
+        "digitalocean",
+        "oracle",
+        "cloudflare",
+        "storage",
+        "deployment",
+        "devops"
+    ],
+    "authors": [
+        {
+            "name": "Subhash Ladumor",
+            "email": "subhashladumor@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^9.0|^10.0|^11.0|^12.0",
+        "illuminate/console": "^9.0|^10.0|^11.0|^12.0",
+        "illuminate/http": "^9.0|^10.0|^11.0|^12.0",
+        "aws/aws-sdk-php": "^3.0",
+        "google/cloud-storage": "^1.0",
+        "microsoft/azure-storage-blob": "^1.0",
+        "cloudinary/cloudinary_php": "^2.0",
+        "aliyuncs/oss-sdk-php": "^2.0",
+        "ibm/ibm-cloud-sdk-core": "^1.0",
+        "digitalocean/doctl": "^1.0",
+        "oracle/oci-php-sdk": "^2.0",
+        "cloudflare/sdk": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0|^10.0|^11.0|^12.0",
+        "orchestra/testbench": "^7.0|^8.0|^9.0",
+        "mockery/mockery": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Subhashladumor\\LaravelMulticloud\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Subhashladumor\\LaravelMulticloud\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Subhashladumor\\LaravelMulticloud\\LaravelMulticloudServiceProvider"
+            ],
+            "aliases": {
+                "LaravelMulticloud": "Subhashladumor\\LaravelMulticloud\\Facades\\LaravelMulticloud"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "scripts": {
+        "test": "phpunit",
+        "test-coverage": "phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true
+    }
+}
