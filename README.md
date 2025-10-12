@@ -454,7 +454,7 @@ This package is open-sourced software licensed under the [MIT license](LICENSE).
 
 ## 🆘 Support
 
-- **Documentation**: [Full Documentation](https://github.com/subhashladumor/laravel-multicloud/wiki)
+- **Documentation**: [Full Documentation](https://github.com/subhashladumor1/laravel-multicloud/blob/main/docs/README.md)
 - **Issues**: [GitHub Issues](https://github.com/subhashladumor/laravel-multicloud/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/subhashladumor/laravel-multicloud/discussions)
 - **Email**: subhashladumor@gmail.com
@@ -465,13 +465,6 @@ This package is open-sourced software licensed under the [MIT license](LICENSE).
 - All Cloud Provider SDKs
 - Open Source Community
 - Contributors and Testers
-
-## 📊 SEO Keywords
-
-**Primary Keywords**: laravel cloud, laravel multicloud, laravel aws, laravel azure, laravel gcp, laravel cloud manager, laravel s3, laravel cloudflare, laravel devops, laravel automation, laravel cloud sdk, laravel backup deploy, laravel cloud api, laravel cloud storage, laravel multi cloud integration, cloud management for laravel
-
-**Secondary Keywords**: php cloud storage, laravel file upload, laravel cloudinary, laravel digitalocean, laravel oracle cloud, laravel ibm cloud, laravel alibaba cloud, laravel cloud integration, laravel storage driver, laravel cloud provider, laravel cloud service, laravel cloud platform, laravel cloud solution, laravel cloud toolkit, laravel cloud utilities
-
 ---
 
 <div align="center">
